@@ -1,0 +1,117 @@
+doctype html
+html
+  head
+    include _head
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body.noscroll
+    noscript
+      style.
+        .preloader {display:none !important;}
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript.
+        |  Вот 
+        a(href='http://artjoker.ua/ru/how-to-enable-javascript/', target='_blank') инструкции
+        | , как включить JavaScript в вашем браузере.
+      
+    //if lte IE 8
+      p.off-js
+        | Ваш браузер устарел, пожалуйста 
+        b обновите
+        |  его.
+    // PRELOADER
+    include _preloader
+    // PRELOADER
+    // mobile menu
+    include _mobile-menu
+    // mobile menu
+    // wrapper start
+    .wrapper
+      // header SECTION
+      .container
+        include _header
+      // header SECTION
+      // breadcrumbs
+      section.breadcrumbs
+        .container
+          ul
+            li 
+              a(href="#") Home 
+            li 
+              span Contacts
+          .head-page Contacts
+      // breadcrumbs
+      section.contact-page
+        .row.contact-top
+          .col.m6.s12
+            #map
+          .col.m6.s12
+            img(src="assets/images/contact.jpg", alt="").contact-img
+        .form-section.animated(data-animation="InDown")
+          .container
+            .contact-box
+              b We will be pleasant to meet you in our office!
+              address
+                ul
+                  li
+                    span Address:
+                    | 4822 , NH Breda, Hoge Mosten 22A    
+                  li
+                    span Phone:
+                    a(href="tel:+31765991590") +31 76 599 1590 
+                  li
+                    span Email:
+                    a(href="mailto:info@controlpay.com") info@controlpay.com
+            .form-head
+              span Write us a feedback
+              | Please, fill the form below
+            form(action="#").js_validate.form
+              .row
+                .col.m6.s12
+                  .field-form
+                    input(type="text",required,placeholder="Name").input-anim
+                    span Name
+                .col.m6.s12
+                  .field-form
+                    input(type="email",required, data-validate="email",placeholder="Email").input-anim
+                    span Email
+                .col.s12
+                  .field-form
+                    input(type="tel",required,data-validate="phone",placeholder="Phone number").input-anim
+                    span Phone number
+                .col.s12
+                  .field-form.field-textarea
+                    textarea(required,
+                    placeholder="Your text here").materialize-textarea.input-anim
+                    span Your text here
+              button.btn.waves-effect.waves-light(type="submit") Send
+      //social
+      section.social-section
+        .container
+          .form-box
+            span.title-form Stay in touch
+            form(action="#").js_validate
+              .form-field
+                div
+                  input(type="email" id="sub-email" required data-validate="email")
+                  label(for="sub-email") Email Address
+                button(type="submit")
+                  | SUBSCRIBE  
+                  span.icon-mail
+          .social-box
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
+              span.icon-ico10
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="200") 
+              span.icon-ico11
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="300") 
+              span.icon-ico12
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="400") 
+              span.icon-ico13
+
+      //social
+      .above-footer
+    include _footer

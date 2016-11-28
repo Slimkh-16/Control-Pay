@@ -1,0 +1,108 @@
+doctype html
+html
+  head
+    include _head
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body.noscroll
+    noscript
+      style.
+        .preloader {display:none !important;}
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript.
+        |  Вот 
+        a(href='http://artjoker.ua/ru/how-to-enable-javascript/', target='_blank') инструкции
+        | , как включить JavaScript в вашем браузере.
+      
+    //if lte IE 8
+      p.off-js
+        | Ваш браузер устарел, пожалуйста 
+        b обновите
+        |  его.
+    // PRELOADER
+    include _preloader
+    // PRELOADER
+    // mobile menu
+    include _mobile-menu
+    // mobile menu
+    // wrapper start
+    .wrapper
+      // header SECTION
+      .container
+        include _header
+      // header SECTION
+      // breadcrumbs
+      section.breadcrumbs
+        .container
+          ul
+            li 
+              a(href="#") Home 
+            li 
+              span Media
+          .head-page Media
+      // breadcrumbs
+      section.media-page
+        mixin media-item(image,media_date,media_head,delay)
+          .col.l4.m12.s12
+            a.media-item.animated(href="#",data-animation="InDown",data-animation-delay="#{delay}")
+              img(src="assets/images/#{image}.jpg", alt="")
+              span.media-item-caption
+                span.media-date= media_date
+                span.media-head= media_head
+                span.link-more
+                  span.icon-ico04 
+                  span.lnk-txt Read more
+        .container
+          .row
+            +media-item('media1','25.10.2016','Charity of the Month','100')
+            +media-item('media2','16.10.2016','Autism Speaks','200')
+            +media-item('media3','06.10.2016','The Children"s Home of Cincinnati','300')
+            +media-item('media1','25.10.2016','Charity of the Month','100')
+            +media-item('media2','16.10.2016','Autism Speaks','200')
+            +media-item('media3','06.10.2016','The Children"s Home of Cincinnati','300')
+          .pagination-section
+            a.prev-page(href="#")
+              span.icon-ico03
+            ul
+              li
+                a(href="#") 1
+              li
+                a(href="#") 2
+              li.active
+                span 3
+              li
+                span ...
+              li
+                a(href="#") 8
+            a.page-next(href="#")
+              span.icon-ico04
+      //social
+      section.social-section
+        .container
+          .form-box
+            span.title-form Stay in touch
+            form(action="#").js_validate
+              .form-field
+                div
+                  input(type="email" id="sub-email" required data-validate="email")
+                  label(for="sub-email") Email Address
+                button(type="submit")
+                  | SUBSCRIBE  
+                  span.icon-mail
+          .social-box
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
+              span.icon-ico10
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="200") 
+              span.icon-ico11
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="300") 
+              span.icon-ico12
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="400") 
+              span.icon-ico13
+
+      //social
+      .above-footer
+    include _footer

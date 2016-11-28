@@ -1,0 +1,119 @@
+doctype html
+html
+  head
+    include _head
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body.noscroll
+    noscript
+      style.
+        .preloader {display:none !important;}
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript.
+        |  Вот 
+        a(href='http://artjoker.ua/ru/how-to-enable-javascript/', target='_blank') инструкции
+        | , как включить JavaScript в вашем браузере.
+      
+    //if lte IE 8
+      p.off-js
+        | Ваш браузер устарел, пожалуйста 
+        b обновите
+        |  его.
+    // PRELOADER
+    include _preloader
+    // PRELOADER
+    // mobile menu
+    include _mobile-menu
+    // mobile menu
+    // wrapper start
+    .wrapper
+      // header SECTION
+      .container
+        include _header
+      // header SECTION
+      // breadcrumbs
+      section.breadcrumbs
+        .container
+          ul
+            li 
+              a(href="#") Home 
+            li 
+              span Supporters
+          .head-page Supporters
+      // breadcrumbs
+      section.support
+        .container
+          .support-top
+            .heading-section Current partners
+            .subheading-text The organizations that we choose to partner with have demonstrated a community-centered approach, excellent financial reporting and a deep knowledge of water project implementation. They are some of the best in the world at bringing clean water to people in need. These are the partners that charity: water currently funds.
+            .support-slider
+              mixin supp-item(img)
+                .swiper-slide
+                  img(src="assets/images/#{img}.png", alt="")
+              .swiper-container
+                .swiper-wrapper
+                  +supp-item('par1')
+                  +supp-item('par2')
+                  +supp-item('par3')
+                  +supp-item('par4')
+                  +supp-item('par5')
+                  +supp-item('par6')
+              .swiper-button-next
+              .swiper-button-prev
+          .support-peop
+            .heading-section Meet a few of our partners
+            .subheading-text Our partners are local experts and professionals with years of exceptional work and proven progress. They are our eyes, ears and calloused hands on the ground.
+            .row
+              mixin support-item(img,name,dur)
+                .col.l6.s12.animated(data-animation="InDown",data-animation-delay="#{dur}")
+                  .support-item
+                    .support-img
+                      img(src="assets/images/#{img}.jpg", alt="")
+                    .support-info
+                      .support-name
+                        b=name 
+                        | CEO Avantic co.
+                        .support-logo
+                          img(src="assets/images/supp-logo.png", alt="")
+                      .support-txt Helped to start a safe water program helping vulnerable women and their children. This program led to the founding of a local organization called Clear Cambodia, and has expanded now to impact hundreds of thousands of people throughout Cambodia.
+                      a(href="#").btn.btn-green.waves-effect.waves-light Go to site
+                      .supp-soc
+                        a(href="#")
+                          span.icon-ico10
+                        a(href="#") 
+                          span.icon-ico13
+              +support-item('sup1','Richard Branson','100')
+              +support-item('sup2','Mikle Branson','200')
+              +support-item('sup3','Anna Branson','100')
+              +support-item('sup4','Richard Branson','200')
+
+      //social
+      section.social-section
+        .container
+          .form-box
+            span.title-form Stay in touch
+            form(action="#").js_validate
+              .form-field
+                div
+                  input(type="email" id="sub-email" required data-validate="email")
+                  label(for="sub-email") Email Address
+                button(type="submit")
+                  | SUBSCRIBE  
+                  span.icon-mail
+          .social-box
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
+              span.icon-ico10
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="200") 
+              span.icon-ico11
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="300") 
+              span.icon-ico12
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="400") 
+              span.icon-ico13
+
+      //social
+      .above-footer
+    include _footer

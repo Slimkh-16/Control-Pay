@@ -1,0 +1,76 @@
+doctype html
+html
+  head
+    include _head
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body.noscroll
+    noscript
+      style.
+        .preloader {display:none !important;}
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript.
+        |  Вот 
+        a(href='http://artjoker.ua/ru/how-to-enable-javascript/', target='_blank') инструкции
+        | , как включить JavaScript в вашем браузере.
+      
+    //if lte IE 8
+      p.off-js
+        | Ваш браузер устарел, пожалуйста 
+        b обновите
+        |  его.
+    // PRELOADER
+    include _preloader
+    // PRELOADER
+    // mobile menu
+    include _mobile-menu
+    // mobile menu
+    // wrapper start
+    .wrapper
+      section.found-page
+        //banner
+        .banner-gen
+          img.found-img(src="assets/images/404.jpg", alt="").banner-img
+          // header SECTION
+          include _header
+          // header SECTION
+          .container
+            .banner-caption
+              img(src="images/404.png", alt="")
+              b Oops, This Page Not Found!
+              p 
+                span.big The link might be corrupted,
+                |  or the page may have been removed 
+              .align-center
+                a.btn.waves-effect.waves-light Go back home
+        //banner
+      //social
+      section.social-section
+        .container
+          .form-box
+            span.title-form Stay in touch
+            form(action="#").js_validate
+              .form-field
+                div
+                  input(type="email" id="sub-email" required data-validate="email")
+                  label(for="sub-email") Email Address
+                button(type="submit")
+                  | SUBSCRIBE  
+                  span.icon-mail
+          .social-box
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
+              span.icon-ico10
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="200") 
+              span.icon-ico11
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="300") 
+              span.icon-ico12
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="400") 
+              span.icon-ico13
+
+      //social
+      .above-footer
+    include _footer

@@ -1,0 +1,121 @@
+doctype html
+html
+  head
+    include _head
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body.noscroll
+    noscript
+      style.
+        .preloader {display:none !important;}
+      div
+        strong Для полной функциональности этого сайта необходимо включить JavaScript.
+        |  Вот 
+        a(href='http://artjoker.ua/ru/how-to-enable-javascript/', target='_blank') инструкции
+        | , как включить JavaScript в вашем браузере.
+      
+    //if lte IE 8
+      p.off-js
+        | Ваш браузер устарел, пожалуйста 
+        b обновите
+        |  его.
+    // PRELOADER
+    include _preloader
+    // PRELOADER
+    // mobile menu
+    include _mobile-menu
+    // mobile menu
+    // wrapper start
+    .wrapper
+      // header SECTION
+      .container
+        include _header
+      // header SECTION
+      // breadcrumbs
+      section.breadcrumbs
+        .container
+          ul
+            li 
+              a(href="#") Home 
+            li 
+              span Typography
+          .head-page Typography
+      // breadcrumbs
+      .container.content-box
+        h1 H1 Header
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        h2 H2 Header
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        h3 H3 Header
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        h4 H4 Header
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        h5 H5 Header
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        ul
+          li Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li Lorem ipsum dolor sit amet, consectetur adipiscing.
+        ol
+          li 
+            span Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li 
+            span Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li 
+            span Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li 
+            span Lorem ipsum dolor sit amet, consectetur adipiscing.
+          li 
+            span Lorem ipsum dolor sit amet, consectetur adipiscing.
+        p
+          input#test1(name='group1', type='radio')
+          label(for='test1') Red
+        p
+          input#test2(name='group1', type='radio')
+          label(for='test2') Yellow
+        p
+          input#test3.with-gap(name='group1', type='radio')
+          label(for='test3') Green
+        p
+          input#test5(type='checkbox')
+          label(for='test5') Red
+        p
+          input#test6(type='checkbox', checked='checked')
+          label(for='test6') Yellow
+        p
+          input#filled-in-box.filled-in(type='checkbox', checked='checked')
+          label(for='filled-in-box') Filled in
+        blockquote
+          | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+      //social
+      section.social-section
+        .container
+          .form-box
+            span.title-form Stay in touch
+            form(action="#").js_validate
+              .form-field
+                div
+                  input(type="email" id="sub-email" required data-validate="email")
+                  label(for="sub-email") Email Address
+                button(type="submit")
+                  | SUBSCRIBE  
+                  span.icon-mail
+          .social-box
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
+              span.icon-ico10
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="200") 
+              span.icon-ico11
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="300") 
+              span.icon-ico12
+            a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="400") 
+              span.icon-ico13
+
+      //social
+      .above-footer
+    include _footer
