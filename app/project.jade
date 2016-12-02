@@ -78,7 +78,8 @@ html
                 p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
                 p It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
                 a(href="#").btn.waves-effect.waves-light Learn more
-          .pagination-section
+        .pagination-section
+          .container
             a.prev-page(href="#")
               span.icon-ico03
             ul
@@ -100,13 +101,12 @@ html
           .form-box
             span.title-form Stay in touch
             form(action="#").js_validate
-              .form-field
-                div
-                  input(type="email" id="sub-email" required data-validate="email")
-                  label(for="sub-email") Email Address
-                button(type="submit")
-                  | SUBSCRIBE  
-                  span.icon-mail
+              .form-field.required-field
+                input(type="email" id="sub-email" required data-validate="email")
+                label(for="sub-email") Email Address
+              button(type="submit")
+                | SUBSCRIBE  
+                span.icon-mail
           .social-box
             a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
               span.icon-ico10

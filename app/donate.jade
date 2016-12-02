@@ -57,65 +57,64 @@ html
             form(action="#").js_validate.form
               .row
                 .col.m8.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="text",required="",placeholder="Name").input-anim
                     span Name
                 .col.m4.s12
-                  .field-form
-                    select
+                  .field-form.required-field
+                    select(required)
                       option(value='', disabled='', selected='') Sex
                       option(value='1') Option 1
                       option(value='2') Option 2
                       option(value='3') Option 3
                 .col.m6.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="email",required="", data-validate="email",placeholder="Email").input-anim
                     span Email
                 .col.m6.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="tel",required="",data-validate="phone",placeholder="Phone number").input-anim
                     span Phone number
                 .col.m8.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="text",required="", placeholder="Address").input-anim
                     span Address
                 .col.m4.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="text",required="",placeholder="ZIP").input-anim
                     span ZIP
                 .col.m6.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="text",required="", placeholder="Country").input-anim
                     span Country
                 .col.m6.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="text",required="",placeholder="City").input-anim
                     span City
                 .col.m8.s12
-                  .field-form
+                  .field-form.required-field
                     input(type="text",required="",placeholder="Amount of donation (currency - ​UAH and ​EUR​)").input-anim
                     span Amount of donation (currency - ​UAH and ​EUR​)
                 .col.m4.s12
-                  .field-form
-                    select
+                  .field-form.required-field
+                    select(required)
                       option(value='', disabled='', selected='') EUR
                       option(value='1') Option 1
                       option(value='2') Option 2
                       option(value='3') Option 3
-                button.btn(type="submit") Send
+              button.btn(type="submit") Send
       //social
       section.social-section
         .container
           .form-box
             span.title-form Stay in touch
             form(action="#").js_validate
-              .form-field
-                div
-                  input(type="email" id="sub-email" required data-validate="email")
-                  label(for="sub-email") Email Address
-                button(type="submit")
-                  | SUBSCRIBE  
-                  span.icon-mail
+              .form-field.required-field
+                input(type="email" id="sub-email" required data-validate="email")
+                label(for="sub-email") Email Address
+              button(type="submit")
+                | SUBSCRIBE  
+                span.icon-mail
           .social-box
             a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
               span.icon-ico10

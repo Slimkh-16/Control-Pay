@@ -71,7 +71,8 @@ function getBrowser() {
     return browsrObj;
 };
 var browserYou = getBrowser();
-if (browserYou.platform == 'mobile') { isMobile = true; }
+if (browserYou.platform == 'mobile') { isMobile = true;document.documentElement.classList.add('mobile'); }
+if ((browserYou.browser == 'ie')) {document.documentElement.classList.add('ie');}
 if ((browserYou.browser == 'ie' &&  browserYou.versionShort < +'9') || ((browserYou.browser == 'opera' || browserYou.browser == 'operaWebkit') && browserYou.versionShort < +'18') || (browserYou.browser == 'firefox' &&  browserYou.versionShort < +'30')) {
     alert('Обновите браузер','')
 };
@@ -181,12 +182,12 @@ window.onload = function() {
         document.querySelector('.map-area').addEventListener('mousemove',function(e){
             var areaTitle = e.target.getAttribute('title');
             if(areaTitle != undefined) {
-                document.querySelector('.title-map').innerText = areaTitle;
+                document.querySelector('.title-map').innerHTML = areaTitle;
                 document.querySelector('.title-map').style.display = "block";
                 document.querySelector('.title-map').style.top = e.clientY + "px";
                 document.querySelector('.title-map').style.left = e.pageX + 20 + "px";
             }else {
-                document.querySelector('.title-map').innerText = "";
+                document.querySelector('.title-map').innerHTML = "";
                 document.querySelector('.title-map').style.display = "none";
             }
         });
@@ -317,19 +318,36 @@ $(document).ready(function() {
         $(this).addClass(animation + " visible");                                                                                                                                                                
       });
     }
-    if($('.filter').length) {
-      var $isotope = $('.filter-container');
-      $isotope.isotope({
-        itemSelector: '.project-report',
-        layoutMode: 'fitRows'
-      });
+    if ((browserYou.browser == 'ie' &&  browserYou.versionShort == '9')) {
       $('.project-report-page .filter a').click(function(){
         var filter = $(this).attr('data-filter');
-        $isotope.isotope({ filter: filter });
-        $('.project-report-page .filter a').removeClass('active');
-        $(this).addClass('active');
+        if(filter == '*') {
+          $('.project-report-page .filter a').removeClass('active');
+          $(this).addClass('active');
+          $('.filter-container .project-report').show();
+        }else {
+          $('.project-report-page .filter a').removeClass('active');
+          $(this).addClass('active');
+          $('.filter-container .project-report').hide();
+          $('.filter-container ' + filter +'').show();
+        }
         return false;
       });
+    }else {
+      if($('.filter').length) {
+        var $isotope = $('.filter-container .row');
+        $isotope.isotope({
+          itemSelector: '.project-report',
+          layoutMode: 'fitRows',
+        });
+        $('.project-report-page .filter a').click(function(){
+          var filter = $(this).attr('data-filter');
+          $isotope.isotope({ filter: filter });
+          $('.project-report-page .filter a').removeClass('active');
+          $(this).addClass('active');
+          return false;
+        });
+      }
     }
     $('input[data-validate="phone"]').mask("+38(999)999 99 99"); 
     $('.sub-head-menu--partner ul, .tab-list').autocolumnlist({
@@ -344,9 +362,25 @@ $(document).ready(function() {
     $('.collapsible').collapsible();
     if (browserYou.browser !== 'safari') {
       $('.parallax').parallax();
-    }
+    }else {$('.parallax img').show()}
     $('.modal').modal({
         opacity: 1,
+    });
+    $('input, textarea').placeholder();
+    $('.where-item-info').liTextLength({
+        length: 70,        
+        afterLength: '...',         
+        fullText:false
+    });
+    $('.project-report__txt p').liTextLength({
+        length: 180,        
+        afterLength: '...',         
+        fullText:false
+    });
+    $('.project-report__head').liTextLength({
+        length: 40,        
+        afterLength: '...',         
+        fullText:false
     });
 });
 // validate form
@@ -363,10 +397,10 @@ function validate(form){
     var phone       = false;
     function mark (object, expression) {
         if (expression) {
-            object.parents('.field-form').addClass(error_class).removeClass(norma_class).find('.error_text').show();
+            object.parents('.required-field').addClass(error_class).removeClass(norma_class).find('.error_text').show();
             e++;
         } else
-            object.parents('.field-form').addClass(norma_class).removeClass(error_class).find('.error_text').hide();
+            object.parents('.required-field').addClass(norma_class).removeClass(error_class).find('.error_text').hide();
     }
     form.find("[required]").each(function(){
         switch($(this).attr("data-validate")) {
@@ -592,3 +626,60 @@ function validate(form){
  }
  
 }(this, document, jQuery));
+//textoverflow
+jQuery.fn.liTextLength = function(options){
+  // настройки по умолчанию
+  var o = jQuery.extend({
+      length: 150,                                    //Видимое кол-во символов
+      afterLength: '...',                                //Текст после видимого содержания        
+      fullText:true,                                    //Добавить ссылку для отображения скрытого текста
+      moreText: '<br>полный&nbsp;текст',                //Текст ссылки до показа скрытого содержания
+      lessText: '<br>скрыть&nbsp;полный&nbsp;текст'    //Текст ссылки после показа скрытого содержания
+  },options);
+  return this.each(function(){
+      var 
+      $el = $(this),
+      elText = $.trim($el.text()),
+      elLength = elText.length;
+      if(elLength > o.length){ 
+          var 
+          textSlice = $.trim(elText.substr(0,o.length)),
+          textSliced = $.trim(elText.substr(o.length));
+          if(textSlice.length < o.length){
+              var 
+              textVisible = textSlice,
+              textHidden = $.trim(elText.substr(o.length));
+          }else{    
+              var 
+              arrSlice = textSlice.split(' '),
+              popped = arrSlice.pop(),
+              textVisible = arrSlice.join(' ') + ' ',
+              textHidden = popped + textSliced  + ' ';
+          };
+          var 
+          $elTextHidden = $('<span>').addClass('elTextHidden').html(textHidden),
+          $afterLength = $('<span>').addClass('afterLength').html(o.afterLength + ' '),
+          $more = $('<span>').addClass('more').html(o.moreText);
+          $el.text(textVisible).append($afterLength).append($elTextHidden);
+          var displayStyle = $elTextHidden.css('display');
+          $elTextHidden.hide();
+          if(o.fullText){
+              $el.append($more);
+              $more.click(function(){
+                  if($elTextHidden.is(':hidden')){
+                      $elTextHidden.css({display:displayStyle})    ;
+                      $more.html(o.lessText);
+                      $afterLength.hide();
+                  }else{
+                      $elTextHidden.hide();
+                      $more.html(o.moreText);
+                      $afterLength.show();
+                  };
+                  return false;
+              });
+          }else{
+              $elTextHidden.remove();
+          };
+      };
+  });
+};

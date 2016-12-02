@@ -99,13 +99,12 @@ html
           .form-box
             span.title-form Stay in touch
             form(action="#").js_validate
-              .form-field
-                div
-                  input(type="email" id="sub-email" required data-validate="email")
-                  label(for="sub-email") Email Address
-                button(type="submit")
-                  | SUBSCRIBE  
-                  span.icon-mail
+              .form-field.required-field
+                input(type="email" id="sub-email" required data-validate="email")
+                label(for="sub-email") Email Address
+              button(type="submit")
+                | SUBSCRIBE  
+                span.icon-mail
           .social-box
             a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
               span.icon-ico10

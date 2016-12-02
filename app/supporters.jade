@@ -72,7 +72,8 @@ html
                 .col.l6.s12.animated(data-animation="InDown",data-animation-delay="#{dur}")
                   .support-item
                     .support-img
-                      img(src="assets/images/#{img}.jpg", alt="")
+                      a(href="#modal1").modal-trigger
+                        img(src="assets/images/#{img}.jpg", alt="")
                     .support-info
                       .support-name
                         b=name 
@@ -82,9 +83,9 @@ html
                       .support-txt Helped to start a safe water program helping vulnerable women and their children. This program led to the founding of a local organization called Clear Cambodia, and has expanded now to impact hundreds of thousands of people throughout Cambodia.
                       a(href="#").btn.btn-green.waves-effect.waves-light Go to site
                       .supp-soc
-                        a(href="#")
+                        a(href="#",target="_blank")
                           span.icon-ico10
-                        a(href="#") 
+                        a(href="#",target="_blank") 
                           span.icon-ico13
               +support-item('sup1','Richard Branson','100')
               +support-item('sup2','Mikle Branson','200')
@@ -97,13 +98,12 @@ html
           .form-box
             span.title-form Stay in touch
             form(action="#").js_validate
-              .form-field
-                div
-                  input(type="email" id="sub-email" required data-validate="email")
-                  label(for="sub-email") Email Address
-                button(type="submit")
-                  | SUBSCRIBE  
-                  span.icon-mail
+              .form-field.required-field
+                input(type="email" id="sub-email" required data-validate="email")
+                label(for="sub-email") Email Address
+              button(type="submit")
+                | SUBSCRIBE  
+                span.icon-mail
           .social-box
             a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
               span.icon-ico10

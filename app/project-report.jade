@@ -51,6 +51,8 @@ html
             b Select year:
             ul
               li
+                a(href='#', data-filter='*').active All time
+              li
                 a(href='#', data-filter='.2016') 2016
               li
                 a(href='#', data-filter='.2015') 2015
@@ -73,7 +75,7 @@ html
                   .project-report__info
                     .project-report__txt
                       .project-report__head= head
-                      | Helped to start a safe water program helping vulnerable women and their children. This program led to the fou+nding of a local organization called Clear... Cambodia, and has expanded now to impact hundreds of thousands of people throughout Cambodia.
+                      p Helped to start a safe water program helping vulnerable women and their children. This program led to the fou+nding of a local organization called Clear... Cambodia, and has expanded now to impact hundreds of thousands of people throughout Cambodia.
                     a.dowload-pdf.btn
                       img(src="images/ico19.svg", alt="")
                       | Open report
@@ -92,13 +94,12 @@ html
           .form-box
             span.title-form Stay in touch
             form(action="#").js_validate
-              .form-field
-                div
-                  input(type="email" id="sub-email" required data-validate="email")
-                  label(for="sub-email") Email Address
-                button(type="submit")
-                  | SUBSCRIBE  
-                  span.icon-mail
+              .form-field.required-field
+                input(type="email" id="sub-email" required data-validate="email")
+                label(for="sub-email") Email Address
+              button(type="submit")
+                | SUBSCRIBE  
+                span.icon-mail
           .social-box
             a.animated(href="#", target="_blank",data-animation="InDown",data-animation-delay="100") 
               span.icon-ico10
