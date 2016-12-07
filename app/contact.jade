@@ -51,7 +51,7 @@ html
             #map
           .col.m6.s12
             img(src="assets/images/contact.jpg", alt="").contact-img
-        .form-section.animated(data-animation="InDown")
+        .form-section
           .container
             .contact-box
               b We will be pleasant to meet you in our office!
@@ -69,7 +69,7 @@ html
             .form-head
               span Write us a feedback
               | Please, fill the form below
-            form(action="#").js_validate.form
+            form(action="#",data-animation="InDown").animated.js_validate.form
               .row
                 .col.m6.s12
                   .field-form.required-field
