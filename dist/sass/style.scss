@@ -71,6 +71,7 @@ body {max-width: 100%;}
 	left: 0;
 	background-color:#45ae7f;
 	padding: 50px;
+	padding-bottom: 55px;
 	overflow-y: auto;
 	text-align: center;
 	opacity: 0;
@@ -168,7 +169,7 @@ body {max-width: 100%;}
 .header-fix {
 	position: fixed !important;
 	z-index: 155;
-	top: 0 !important;
+	top: 20px !important;
 	left: 0 !important;
 	right: 0 !important;
 	margin: auto !important;
@@ -372,6 +373,7 @@ body {max-width: 100%;}
 	background-color: rgba(255, 243, 0, 0.5);
 	border-radius: 3px 2px 2px 3px;
 	text-align: center;
+	// padding-left: 45px;
 	font-size: 57px;
 	line-height: 70px;
 	color: #fff;
@@ -696,7 +698,7 @@ body {max-width: 100%;}
 	@include fb;
 }
 .blue-section {
-	background:url(../assets/images/bg.jpg) 100% 0 no-repeat;
+	background:url(../assets/images/bg.jpg) 0 0 no-repeat;
 	background-size: cover;
 	padding: 132px 0 100px;
 	margin-top: -92px;
@@ -1956,7 +1958,7 @@ body {max-width: 100%;}
 }
 .filter-container {
 	overflow: hidden;
-	margin: 0 -15px;
+	// margin: 0 -15px;
 	position: relative;
 }
 .project-report {
@@ -1972,7 +1974,7 @@ body {max-width: 100%;}
 .project-report__img {
 	float: left;
 	width: 48%;
-	height: 348px;
+	height: 410px;
 	overflow: hidden;
 	img {
 		height: 100%;
@@ -1981,7 +1983,7 @@ body {max-width: 100%;}
 	}
 }
 .project-report__info {
-	height: 348px;
+	height: 410px;
 	float: left;
 	width: 52%;
 	padding: 45px 25px 110px 45px;
@@ -2297,6 +2299,14 @@ blockquote {
 	}
 }
 .modal {box-shadow: none;z-index: 555;}
+.white-link  {
+	color: #fff;
+	text-decoration: underline;
+	&:hover {
+		color: #fff;
+		text-decoration: none;
+	}
+}
 @media screen and (max-width: 1700px) {
 	.mecenat-box {margin-top: -100px;}
 	.found-page .banner-caption {top: 155px;}
@@ -2390,6 +2400,7 @@ blockquote {
 @media screen and (max-width: 1200px) {
 	.header-fix {
 		// display: none !important;
+		top: 0 !important;
 		border-radius: 0px;
 		.donate {
 			border-radius: 0px;
@@ -2410,7 +2421,7 @@ blockquote {
 		width: auto;
 		max-width: none;
 	}
-	.central-white-box .heading-section {text-align: center;}
+	// .central-white-box .heading-section {text-align: center;}
 	.about-us .central-white-box {margin-top: 0 !important;}
 	// .project-report__txt {
 	// 	max-height: 225px;
@@ -2506,14 +2517,14 @@ blockquote {
 		width: 100%;
 		height: auto;
 	}
-	.project-report__info {height: 220px;}
+	.project-report__info {height: 260px;}
 	.project-report__img img {
 		height: auto;
 		width: 100%;
 	}
 }
 @media screen and (max-width: 1023px) {
-	.project-report__info {height: 290px;}
+	.project-report__info {height: 335px;}
 	.modal .modal-content {
 		font-size: 18px;
 		line-height: 24px;
@@ -2672,14 +2683,6 @@ blockquote {
 		font-size: 22px;
 		line-height: 28px;
 	}
-}
-@media screen and (max-width: 767px) {
-	.text-box {
-		padding: 30px 0;
-	}
-	.where-item {
-		padding-bottom: 40px !important;
-	}
 	.breadcrumbs-white {
 		top:auto;
 		bottom: 0;
@@ -2692,12 +2695,6 @@ blockquote {
 		transition-delay:0.3s;
 		ul {margin: 0;}
 	}
-	.video-box a:before {
-		font-size: 50px;
-		line-height: 50px;
-		width: 50px;
-		height: 50px;
-	}
 	.loaded .breadcrumbs-white {
 		transform:translateY(0px);
 		opacity: 1;
@@ -2707,6 +2704,23 @@ blockquote {
 	}
 	.breadcrumbs-white a:hover {
 		color: $th !important;
+	}
+}
+@media screen and (max-width: 767px) {
+	.project-report__info {
+		height: auto;
+	}
+	.text-box {
+		padding: 30px 0;
+	}
+	.where-item {
+		padding-bottom: 40px !important;
+	}
+	.video-box a:before {
+		font-size: 50px;
+		line-height: 50px;
+		width: 50px;
+		height: 50px;
 	}
 	.hidden-mobile {display: none;}
 	.where-item .read-more {bottom: 15px;}
@@ -2731,7 +2745,7 @@ blockquote {
 		padding: 25px;
 		top: -150px;
 	}
-	.btn {padding: 0 15px;font-size: 14px;}
+	.btn {padding: 0 25px;font-size: 14px;}
 	.banner-caption {
 		left: 15px;
 		right: 15px;
@@ -2843,10 +2857,11 @@ blockquote {
 	.our-team-item {margin: 0 0 15px;}
 	.our-team .row {overflow: hidden;}
 	.form-field input {
-		padding-right: 35px;
+		padding-right: 60px;
 	}
 	.social-section button {
-		right: 20px;
+		right: 33px;
+		padding: 0;
 		font-size: 0;
 	}
 	.hamburger {
@@ -2890,7 +2905,7 @@ blockquote {
 			height: auto;
 			line-height: normal;
 			border-radius:0px;
-			padding: 5px 15px;
+			padding: 10px 15px;
 			color: #fff;
 			@include fb;
 			// transform: translateX(-50%);

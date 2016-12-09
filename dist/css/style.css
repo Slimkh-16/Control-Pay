@@ -397,6 +397,7 @@ body {
   left: 0;
   background-color: #45ae7f;
   padding: 50px;
+  padding-bottom: 55px;
   overflow-y: auto;
   text-align: center;
   opacity: 0;
@@ -538,7 +539,7 @@ body {
 .header-fix {
   position: fixed !important;
   z-index: 155;
-  top: 0 !important;
+  top: 20px !important;
   left: 0 !important;
   right: 0 !important;
   margin: auto !important;
@@ -1155,7 +1156,7 @@ body {
   font-family: 'RalewayBold',sans-serif; }
 
 .blue-section {
-  background: url(../assets/images/bg.jpg) 100% 0 no-repeat;
+  background: url(../assets/images/bg.jpg) 0 0 no-repeat;
   background-size: cover;
   padding: 132px 0 100px;
   margin-top: -92px; }
@@ -2497,7 +2498,6 @@ body {
 
 .filter-container {
   overflow: hidden;
-  margin: 0 -15px;
   position: relative; }
 
 .project-report {
@@ -2512,7 +2512,7 @@ body {
 .project-report__img {
   float: left;
   width: 48%;
-  height: 348px;
+  height: 410px;
   overflow: hidden; }
   .project-report__img img {
     height: 100%;
@@ -2520,7 +2520,7 @@ body {
     max-width: none; }
 
 .project-report__info {
-  height: 348px;
+  height: 410px;
   float: left;
   width: 52%;
   padding: 45px 25px 110px 45px;
@@ -2858,6 +2858,13 @@ blockquote {
   box-shadow: none;
   z-index: 555; }
 
+.white-link {
+  color: #fff;
+  text-decoration: underline; }
+  .white-link:hover {
+    color: #fff;
+    text-decoration: none; }
+
 @media screen and (max-width: 1700px) {
   .mecenat-box {
     margin-top: -100px; }
@@ -2968,6 +2975,7 @@ blockquote {
 
 @media screen and (max-width: 1200px) {
   .header-fix {
+    top: 0 !important;
     border-radius: 0px; }
     .header-fix .donate {
       border-radius: 0px; }
@@ -2987,8 +2995,6 @@ blockquote {
     margin: 0 -15px !important;
     width: auto;
     max-width: none; }
-  .central-white-box .heading-section {
-    text-align: center; }
   .about-us .central-white-box {
     margin-top: 0 !important; }
   .mecenat-info {
@@ -3085,14 +3091,14 @@ blockquote {
     width: 100%;
     height: auto; }
   .project-report__info {
-    height: 220px; }
+    height: 260px; }
   .project-report__img img {
     height: auto;
     width: 100%; } }
 
 @media screen and (max-width: 1023px) {
   .project-report__info {
-    height: 290px; }
+    height: 335px; }
   .modal .modal-content {
     font-size: 18px;
     line-height: 24px;
@@ -3250,13 +3256,7 @@ blockquote {
       transform: translateX(-50%); }
   .found-page .banner-caption b, .found-page .banner-caption .big, .form-head {
     font-size: 22px;
-    line-height: 28px; } }
-
-@media screen and (max-width: 767px) {
-  .text-box {
-    padding: 30px 0; }
-  .where-item {
-    padding-bottom: 40px !important; }
+    line-height: 28px; }
   .breadcrumbs-white {
     top: auto;
     bottom: 0;
@@ -3273,11 +3273,6 @@ blockquote {
     transition-delay: 0.3s; }
     .breadcrumbs-white ul {
       margin: 0; }
-  .video-box a:before {
-    font-size: 50px;
-    line-height: 50px;
-    width: 50px;
-    height: 50px; }
   .loaded .breadcrumbs-white {
     -webkit-transform: translateY(0px);
     -ms-transform: translateY(0px);
@@ -3286,7 +3281,20 @@ blockquote {
   .breadcrumbs-white span, .breadcrumbs-white a {
     color: #252525 !important; }
   .breadcrumbs-white a:hover {
-    color: #45ae7f !important; }
+    color: #45ae7f !important; } }
+
+@media screen and (max-width: 767px) {
+  .project-report__info {
+    height: auto; }
+  .text-box {
+    padding: 30px 0; }
+  .where-item {
+    padding-bottom: 40px !important; }
+  .video-box a:before {
+    font-size: 50px;
+    line-height: 50px;
+    width: 50px;
+    height: 50px; }
   .hidden-mobile {
     display: none; }
   .where-item .read-more {
@@ -3320,7 +3328,7 @@ blockquote {
     padding: 25px;
     top: -150px; }
   .btn {
-    padding: 0 15px;
+    padding: 0 25px;
     font-size: 14px; }
   .banner-caption {
     left: 15px;
@@ -3453,9 +3461,10 @@ blockquote {
   .our-team .row {
     overflow: hidden; }
   .form-field input {
-    padding-right: 35px; }
+    padding-right: 60px; }
   .social-section button {
-    right: 20px;
+    right: 33px;
+    padding: 0;
     font-size: 0; }
   .hamburger {
     right: 30px;
@@ -3493,7 +3502,7 @@ blockquote {
     height: auto;
     line-height: normal;
     border-radius: 0px;
-    padding: 5px 15px;
+    padding: 10px 15px;
     color: #fff;
     font-family: 'RalewayBold',sans-serif; }
   .mobile-menu .laung-menu {

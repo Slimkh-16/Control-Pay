@@ -108,7 +108,34 @@ if ((browserYou.browser == 'ie' &&  browserYou.versionShort < +'9') || ((browser
   }
 })();
 // input animation
+// count people
+var numberCount = parseInt(document.querySelector('.count-people').innerText);
+function count_people() {
+  var delayCount = 10,
+      countN = 0;
+  var intervalCount = setInterval(function(){
+    countN = countN + 1000;
+    document.querySelector('.count-people').innerText = countN;
+    if (countN >= numberCount) {
+      clearInterval(intervalCount)
+    }
+  },delayCount)
+}
+// count people
 window.onload = function() {
+  // count
+  if(document.querySelector('.count-people') != undefined) {
+    // count_people();
+    setTimeout(function(){
+      $('.count-people').countTo({
+          from: 0,
+          to: numberCount,
+          speed: 2000,
+          refreshInterval: 30,
+      });
+    },700)
+  }
+  // count
   // PRELOADER
   var body = document.querySelector('body');
   body.classList.remove('noscroll')
@@ -140,6 +167,9 @@ window.onload = function() {
       loop:true,
       slidesPerView: 'auto',
       spaceBetween: 50,
+      autoplay: 1500,
+      speed: 700,
+      autoplayDisableOnInteraction: false,
       nextButton: '.support-slider .swiper-button-next',
       prevButton: '.support-slider .swiper-button-prev',
   });
@@ -381,7 +411,7 @@ $(document).ready(function() {
         $(this).addClass(animation + " visible");                                                                                                                                                                
       });
     }
-    if ((browserYou.browser == 'ie' &&  browserYou.versionShort == '9')) {
+    if ((browserYou.browser == 'ie' &&  browserYou.versionShort == '9') || isMobile === true) {
       $('.project-report-page .filter a').click(function(){
         var filter = $(this).attr('data-filter');
         if(filter == '*') {
