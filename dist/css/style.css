@@ -338,21 +338,21 @@ body.noscroll {
   clear: both; }
 
 @media screen and (min-width: 1024px) {
-  ::-webkit-scrollbar {
+  .desktop ::-webkit-scrollbar {
     width: 7px; }
-  ::-webkit-scrollbar:horizontal {
+  .desktop ::-webkit-scrollbar:horizontal {
     height: 7px; }
-  ::-webkit-scrollbar-thumb {
+  .desktop ::-webkit-scrollbar-thumb {
     width: 7px;
     border-color: #fff;
     background-color: #4fa37e; }
-  ::-webkit-scrollbar-thumb:hover {
+  .desktop ::-webkit-scrollbar-thumb:hover {
     border-width: 1px 1px 1px 2px;
     border-color: #4fa37e;
     background-color: #828283; }
-  ::-webkit-scrollbar-track {
+  .desktop ::-webkit-scrollbar-track {
     border-width: 0; }
-  ::-webkit-scrollbar-track-piece {
+  .desktop ::-webkit-scrollbar-track-piece {
     background: transparent; } }
 
 body {
@@ -362,6 +362,56 @@ body {
   min-height: 100%;
   position: relative;
   max-width: 100%; }
+
+.coming-soon-page .banner-gen .container {
+  position: static; }
+
+.coming-soon-page .blog-box {
+  padding-bottom: 25px !important;
+  margin-bottom: 0 !important; }
+
+.coming-soon-page .head-nav ul li a, .coming-soon-page .head-nav ul li span,
+.coming-soon-page .logo, .coming-soon-page .laung-menu .laung-it,
+.coming-soon-page .donate {
+  cursor: not-allowed; }
+
+.coming-soon-page .banner-gen {
+  height: auto;
+  overflow: hidden; }
+
+.coming-soon-page .coming-soon {
+  opacity: 0;
+  margin: 0 auto;
+  margin-top: 250px;
+  margin-bottom: 250px;
+  width: 500px;
+  max-width: 100%;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 26px;
+  line-height: 32px;
+  -webkit-transition: all .6s linear;
+  transition: all .6s linear;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s; }
+  .coming-soon-page .coming-soon b {
+    display: block;
+    font-size: 40px;
+    line-height: 44px; }
+
+@media screen and (max-width: 767px) {
+  .coming-soon-page .coming-soon {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    font-size: 22px;
+    line-height: 28px; }
+    .coming-soon-page .coming-soon b {
+      font-size: 36px;
+      line-height: 40px; } }
+
+.loaded .coming-soon {
+  opacity: 1; }
 
 .row {
   margin-bottom: 0; }
@@ -1579,6 +1629,19 @@ body {
     color: #4d9072; }
     .blog-box b:first-child {
       margin-top: 0; }
+  .blog-box ul li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    position: relative; }
+    .blog-box ul li:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #4d9072; }
 
 .loaded .blog-box {
   opacity: 1;

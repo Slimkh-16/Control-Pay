@@ -33,12 +33,12 @@ body.noscroll {overflow: hidden !important;}
   clear: both;
 }
 @media screen and (min-width: 1024px) {
-	::-webkit-scrollbar { width: 7px; }
-	::-webkit-scrollbar:horizontal { height: 7px; }
-	::-webkit-scrollbar-thumb { width: 7px; border-color: #fff; background-color: #4fa37e;}
-	::-webkit-scrollbar-thumb:hover { border-width: 1px 1px 1px 2px; border-color: #4fa37e; background-color: #828283; }
-	::-webkit-scrollbar-track { border-width: 0; }
-	::-webkit-scrollbar-track-piece { background: transparent; }
+.desktop	::-webkit-scrollbar { width: 7px; }
+.desktop	::-webkit-scrollbar:horizontal { height: 7px; }
+.desktop	::-webkit-scrollbar-thumb { width: 7px; border-color: #fff; background-color: #4fa37e;}
+.desktop	::-webkit-scrollbar-thumb:hover { border-width: 1px 1px 1px 2px; border-color: #4fa37e; background-color: #828283; }
+.desktop	::-webkit-scrollbar-track { border-width: 0; }
+.desktop	::-webkit-scrollbar-track-piece { background: transparent; }
 }
 // ::-webkit-scrollbar-track:hover { border-left: solid 1px #cecece; background-color: #cecece; }
 body {max-width: 100%;}
@@ -46,6 +46,60 @@ body {max-width: 100%;}
 	min-height: 100%;
 	position: relative;
 	max-width: 100%;
+}
+.coming-soon-page {
+	.banner-gen .container {
+		position: static;
+	}
+	.blog-box {
+		padding-bottom: 25px !important;
+		margin-bottom: 0 !important;
+	}
+	.head-nav ul li a, .head-nav ul li span,
+	.logo, .laung-menu .laung-it,
+	 .donate {
+		cursor: not-allowed;
+	}
+	.banner-gen {
+		height: auto;
+		overflow:hidden;
+	}
+	.coming-soon {
+		opacity: 0;
+		margin: 0 auto;
+		margin-top: 250px;
+		margin-bottom: 250px;
+		width: 500px;
+		max-width: 100%;
+		padding: 25px;
+		background:rgba(255,255,255,0.8);
+		text-align: center;
+		font-size: 26px;
+		line-height: 32px;
+
+		@include anim-linear;
+		transition-delay:0.4s;
+		b {
+			display: block;
+			font-size: 40px;
+			line-height: 44px;
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	.coming-soon-page .coming-soon {
+		margin-top: 200px;
+		margin-bottom: 50px;
+		font-size: 22px;
+		line-height: 28px;
+		b {
+			font-size: 36px;
+			line-height: 40px;
+		}
+	}	
+}
+.loaded .coming-soon {
+	opacity: 1;
 }
 .row {margin-bottom: 0;}
 .container .row {margin: 0 -15px;}
@@ -1082,6 +1136,21 @@ body {max-width: 100%;}
 		line-height: 36px;
 		color: #4d9072;
 		&:first-child {margin-top: 0;}
+	}
+	ul li {
+		margin-bottom: 15px;
+		padding-left: 10px;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background:#4d9072;
+		}
 	}
 }
 .loaded .blog-box {

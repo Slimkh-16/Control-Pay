@@ -109,17 +109,19 @@ if ((browserYou.browser == 'ie' &&  browserYou.versionShort < +'9') || ((browser
 })();
 // input animation
 // count people
-var numberCount = parseInt(document.querySelector('.count-people').innerText);
-function count_people() {
-  var delayCount = 10,
-      countN = 0;
-  var intervalCount = setInterval(function(){
-    countN = countN + 1000;
-    document.querySelector('.count-people').innerText = countN;
-    if (countN >= numberCount) {
-      clearInterval(intervalCount)
-    }
-  },delayCount)
+if(document.querySelector('.count-people') != undefined) {
+  var numberCount = parseInt(document.querySelector('.count-people').innerText);
+  function count_people() {
+    var delayCount = 10,
+        countN = 0;
+    var intervalCount = setInterval(function(){
+      countN = countN + 1000;
+      document.querySelector('.count-people').innerText = countN;
+      if (countN >= numberCount) {
+        clearInterval(intervalCount)
+      }
+    },delayCount)
+  }
 }
 // count people
 window.onload = function() {
